@@ -1,4 +1,5 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import styles from './styles/app.css';
 import type { MetaFunction } from '@remix-run/node';
 
 export const meta: MetaFunction = () => ({
@@ -6,6 +7,10 @@ export const meta: MetaFunction = () => ({
   title: 'New Remix App',
   viewport: 'width=device-width,initial-scale=1',
 });
+
+export function links() {
+  return [{ rel: 'stylesheet', href: styles }];
+}
 
 const App = () => {
   return (
